@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resource Page</title>
+  <link rel="stylesheet" href="/resource.css">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo&family=Mulish&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo&family=Mulish:wght@400;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo&family=Mulish:wght@400;800&family=Oregano&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo&family=Mulish:wght@400;800&family=Oregano&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <video class="header-video" src="/videos/Speakwiththeworld.mp4" autoplay controls></video>
+      <br>
+    </div>
+    <nav class="nav-container">
+      <div class="nav-box">
+        <img class="hamburger-menu" src="/images/hamburgermenu.png" alt="site-menu">
+      </div>
+      <div class="home">
+        <a href="SAindex.html">HOME</a>
+      </div>
+      <div class="resources">
+        <a href="Resources.html">RESOURCES</a>
+      </div>
+      <div class="blog">
+        <a href="blog.html">BLOG</a>
+      </div>
+      <div class="search-bar-container">
+        <input class="search-box" type="text" placeholder="Search">
+      </div>  
+    </nav>
+  </header>
+  <div class="body-grid">
+    <div class="grammar">
+      <a href="grammar.html">
+        <button> Grammar</button>
+      </a>
+    </div>
+    <div class="vocabulary">
+      <a href="vocabulary.html">
+        <button> Vocabulary</button>
+      </a>
+    </div>
+    <div class="worksheets">
+      <a href="worksheets.html">
+        <button>Worksheets</button>
+      </a>
+    </div>
+    <div class="videos">
+      <a href="videos.html">
+        <button>Videos</button> 
+      </a>
+    </div>
+    <div class="culture">
+      <a href="culture.html">
+        <button>Culture</button>
+      </a>
+    </div>
+    <div class="games">
+      <a href="games.html">
+        <button>Games</button>
+      </a>
+    </div>
+  </div>
+  <footer>
+    <div class="name">Spanish Amigo</div>
+    <div class="logo"></div>
+    
+    <div class="socialmedia-container">
+      <div class="f">
+        <a href="https://www.facebook.com/TheSpanishAmigo">f</a>
+      </div>
+      <div class="t">
+        <a href="https://www.facebook.com/TheSpanishAmigo">t</a>
+      </div>
+      <div class="i">
+        <a href="https://www.facebook.com/TheSpanishAmigo">i</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown =>{
+      const select = dropdown.querySelector('.select');
+      const caret = dropdown.querySelector('.caret');
+      const menu = dropdown.querySelector('.menu');
+      const options = dropdown.querySelectorAll('.menu li');
+      const selected = dropdown.querySelector('.selected');
+    
+      select.addEventListener('click', () => {
+      select.classList.toggle('select-clicked');
+      caret.classList.toggle('caret-rotate');
+      menu.classList.toggle('menu-open');
+    });  
+  }); 
+    options.forEach(option => {
+      option.addEventListener('click',() =>{
+        selected.innerText = option.innerText;
+        select.classList.remove('select-clicked');
+        caret.classList.remove('caret-rotate');
+        menu.classList.remove('menu-open');
+        options.forEach(option => {
+          option.classList.remove('active');
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

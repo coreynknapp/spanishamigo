@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spanish Amigo</title>
+  
+  <link rel="stylesheet" href="/Spstyle.css">
+  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo&family=Mulish&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo&family=Mulish:wght@400;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo&family=Mulish:wght@400;800&family=Oregano&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo&family=Mulish:wght@400;800&family=Oregano&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
+
+</head>
+
+<body id="container">
+  <header>
+    <div class="header-container">
+      <video class="header-video" src="/videos/Speakwiththeworld.mp4" autoplay controls></video>
+      <br>
+      <nav class="nav-container">
+        <span class="nav-box">
+          <img class="hamburger-menu" src="/images/hamburgermenu.png" alt="site-menu">
+          <span class="search-bar-container">
+            <input class="search-bar" type="text" placeholder="Search">
+            <button class="search-button">
+              <img class="search-icon" src="/images/icons8-search.svg" alt="search-site">
+            </button>
+          </span>
+        </span>
+        <ul id="header-links-container">
+          <li class="header-links" tabindex="1">
+            <a href="SAindex.html">HOME</a>
+          </li>
+          <li class="header-links">
+            <a href="Resources.html" tabindex="2">RESOURCES</a>
+          </li>
+          <li class="header-links" tabindex="3">
+            <a href="blog.html">BLOG</a>
+          </li>
+        </ul>
+        
+        <div class="dropdown">
+          <div class="select">
+            <span class="selected">
+   
+            </span>
+          <div class="caret"></div>
+        </div>
+          <ul class="menu">
+            <li>
+              <a href="SAindex.html">HOME</a>
+              </li>
+            <li>
+              <a href="Resources.html">RESOURCES</a>
+            </li>
+            <li>
+              <a href="blog.html">BLOG</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <p class="didyouknow">Did you know...</p>
+  <div class="home-img-container">
+    <img class="learn2nd-img" src="/images/Whylearna2ndlanguage.jpg" alt="Reasons to learn a 2nd language">
+    <img class="bilingualism-img" src="/images/bilingualismaroundtheworld.jpg" alt="Map of multi-lingual countries">
+    <img class="spanish-countries-img" src="/images/countriesthatspeakspanish.jpg" alt="Map of countries that speak Spanish"> 
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <img class="logo" src="/images/ChichenIztaLogo.png" alt="Spanish Amigo logo">
+          <p class="spanish-amigo">Spanish Amigo</p>
+          <p class="fb">
+            <a href="https://www.facebook.com/TheSpanishAmigo">f</a>
+          </p>
+          <p class="insta">
+            <a href="https://www.facebook.com/TheSpanishAmigo">i</a>
+          </p>
+          <p class="tiktok">
+            <a href="https://www.facebook.com/TheSpanishAmigo">t</a>
+          </p>
+        </div>
+      </div> 
+    </div>
+  </footer>
+
+  <script>
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown =>{
+      const select = dropdown.querySelector('.select');
+      const caret = dropdown.querySelector('.caret');
+      const menu = dropdown.querySelector('.menu');
+      const options = dropdown.querySelectorAll('.menu li');
+      const selected = dropdown.querySelector('.selected');
+    
+      select.addEventListener('click', () => {
+      select.classList.toggle('select-clicked');
+      caret.classList.toggle('caret-rotate');
+      menu.classList.toggle('menu-open');
+    });  
+  }); 
+    options.forEach(option => {
+      option.addEventListener('click',() =>{
+        selected.innerText = option.innerText;
+        select.classList.remove('select-clicked');
+        caret.classList.remove('caret-rotate');
+        menu.classList.remove('menu-open');
+        options.forEach(option => {
+          option.classList.remove('active');
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
